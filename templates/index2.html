@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>电影单</title>
+  </head>
+  <body>
+    <h1>{{user}}的观影列表</h1>
+    <h2>电影{{movies|length}}</h2>
+    <table border="1" cellpadding="5">
+      <tr>
+        <td>标题</td>
+        <td>年份</td>
+      </tr>
+      {% for movie in movies%}
+      <tr>
+        <td>{{movie.title}}</td>
+        <td>{{movie.year}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
