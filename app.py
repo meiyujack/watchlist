@@ -62,14 +62,13 @@ class Movie(db.Model):
 
 @app.route('/')
 def index():
-    user=User.query.first()
     movies=Movie.query.all()
     # movies=[
     # Movie('龙猫','1988'),Movie('死亡诗社','1989'),Movie('完美的世界','1993'),
     # Movie('这个杀手不太冷','1994'),Movie('麻将','1996'),Movie('燕尾蝶','1996'),
     # Movie('喜剧之王','1999'),Movie('机器人总动员','2008')
     # ]
-    return render_template('index.html',user=user,movies=movies)
+    return render_template('index.html',movies=movies)
 
 @app.route('/home')
 def hello():
@@ -87,3 +86,16 @@ def test_url_for():
     print(url_for('test_url_for'))
     print(url_for('test_url_for',num=2))
     return 'test... '
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'),404
+
+@app.context_processor
+def show_user():
+    user=User.query.first()
+    return dict(user=user)
+
+@app.route('/ttt')
+def ttt():
+    return render_template('base.html')

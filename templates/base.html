@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+  <head>
+    {% block head %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>{{user.name}}的观影表单</title>
+    <link rel="icon" href="{{url_for('static',filename='favicon.ico')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    {% endblock %}
+  </head>
+  <body>
+    <h2>
+      <img class="girl" src="{{url_for('static',filename='images/girl.jpg')}}" alt="girl">
+      <br>{{user.name}}的观影列表
+    </h2>
+    <nav>
+      <ul>
+        <li><a href="{{url_for('index')}}">Home</a></li>
+      </ul>
+    </nav>
+    {% block content %}{% endblock %}
+    <footer>
+      <small>&copy;2019 <a href="https://github.com/meiyujack">meiyujack</a></small>
+    </footer>
+  </body>
+</html>
