@@ -10,6 +10,11 @@
     {% endblock %}
   </head>
   <body>
+    {% for message in get_flashed_messages() %}
+      <div class="alert">
+        {{message}}
+      </div>
+    {% endfor%}
     <h2>
       <img class="girl" src="{{url_for('static',filename='images/girl.jpg')}}" alt="girl">
       <br>{{user.name}}的观影列表

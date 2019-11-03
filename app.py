@@ -1,6 +1,6 @@
 import os,click
 
-from flask import Flask,url_for,render_template
+from flask import Flask,url_for,render_template,redirect,request,flash
 from flask_sqlalchemy import SQLAlchemy
 
 from models.movie import Movie
@@ -11,6 +11,7 @@ from models.movie import Movie
 app=Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///'+os.path.join(app.root_path,'data.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
+app.config['SECRET_KEY']='freedom'
 
 db=SQLAlchemy(app)
 
@@ -60,15 +61,60 @@ class Movie(db.Model):
     def __repr__(self):
         return '<Movie {}>'.format(self.title)
 
-@app.route('/')
+@app.route('/',methods=['GET','POST'])
 def index():
-    movies=Movie.query.all()
+    if request.method=='POST':
+        title=request.form.get('title')
+        year=request.form.get('year')
+        if not title or not year or len(year)!=4 or len(title)>60:
+            flash('非法输入！')
+            return redirect(url_for('index'))
+        movie=Movie(title=title,year=year)
+        db.session.add(movie)
+        db.session.commit()
+        flash('已创建！')
+        return redirect(url_for('index'))
+
+    return render_template('index.html')
+    # movies=Movie.query.all()
     # movies=[
     # Movie('龙猫','1988'),Movie('死亡诗社','1989'),Movie('完美的世界','1993'),
     # Movie('这个杀手不太冷','1994'),Movie('麻将','1996'),Movie('燕尾蝶','1996'),
     # Movie('喜剧之王','1999'),Movie('机器人总动员','2008')
     # ]
-    return render_template('index.html',movies=movies)
+    # return render_template('index.html',movies=movies)
+
+@app.route('/add')
+def reg():
+    return render_template('form.html')
+
+@app.route('/movie/edit/<int:movie_id>',methods=['GET','POST'])
+def edit(movie_id):
+    movie=Movie.query.get_or_404(movie_id)
+
+    if request.method=='POST':
+        title=request.form['title']
+        year=request.form['year']
+
+        if not title or not year or len(year)!=4 or len(title)>60:
+            flash('非法输入！')
+            return redirect(url_for('edit',movie_id=movie_id))
+
+        movie.title=title
+        movie.year=year
+        db.session.commit()
+        flash('条目已更新。')
+        return redirect(url_for('index'))
+
+    return render_template('edit.html',movie=movie)
+
+@app.route('/movie/delete/<int:movie_id>',methods=['POST'])
+def delete(movie_id):
+    movie=Movie.query.get_or_404(movie_id)
+    db.session.delete(movie)
+    db.session.commit()
+    flash('该条目已删除')
+    return redirect(url_for('index'))
 
 @app.route('/home')
 def hello():
@@ -95,6 +141,11 @@ def page_not_found(e):
 def show_user():
     user=User.query.first()
     return dict(user=user)
+
+@app.context_processor
+def show_movies():
+    movies=Movie.query.all()
+    return dict(movies=movies)
 
 @app.route('/ttt')
 def ttt():

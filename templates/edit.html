@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+  <form action="/" method="post">
+    <label for="title">名称</label>
+    <input type="text" name="title" autocomplete="off" required value="{{movie.title}}">
+    <label for="year">年份</label>
+    <input type="text" name="year" autocomplete="off" required value="{{movie.year}}">
+  </form>
+{% endblock %}
