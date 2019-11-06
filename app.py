@@ -84,7 +84,7 @@ def login():
         password=request.form['password']
 
         if not username or not password:
-            flash('非法输入!')
+            flash('非法输入！')
             return redirect(url_for('login'))
 
         user=User.query.first()
@@ -93,7 +93,7 @@ def login():
             flash('登陆成功！')
             return redirect(url_for('index'))
 
-        flash('无效用户名或密码。')
+        flash('无效的用户名或密码。')
         return redirect(url_for('login'))
     return render_template('login.html')
 
@@ -181,7 +181,7 @@ def delete(movie_id):
     movie=Movie.query.get_or_404(movie_id)
     db.session.delete(movie)
     db.session.commit()
-    flash('该条目已删除')
+    flash('该条目已删除。')
     return redirect(url_for('index'))
 
 @app.route('/home')
