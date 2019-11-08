@@ -1,6 +1,8 @@
 import unittest
 
-from app import app,db,Movie,User,forge,initdb
+from watchlist import app,db
+from watchlist.models import Movie,User
+from watchlist.commands import forge,initdb
 
 class WatchlistTestCase(unittest.TestCase):
     def setUp(self):
@@ -147,8 +149,18 @@ class WatchlistTestCase(unittest.TestCase):
         self.assertNotIn('登出',data)
         self.assertNotIn('设置',data)
         self.assertNotIn('<form method="post">',data)
-        self.assertNotIn('Delete',data)
-        self.assertNotIn('Edit',data)
+        self.assertNotIn('删除',data)
+        self.assertNotIn('编辑',data)
+
+    def test_invalid_user(self):
+        response=self.client.post('/',data=dict(
+            username='test',
+            password='456'
+        ),follow_redirects=True)
+        data=response.get_data(as_text=True)
+        self.assertIn('登陆',data)
+        self.assertNotIn('删除',data)
+        self.assertNotIn('编辑',data)
 
     #测试登陆
     def test_login(self):
@@ -274,12 +286,6 @@ class WatchlistTestCase(unittest.TestCase):
         self.assertEqual(User.query.count(),1)
         self.assertEqual(User.query.first().username,'peter')
         self.assertTrue(User.query.first().validate_password('456'))
-
-    def test_base_page(self):
-        response=self.client.get('/ttt')
-        data=response.get_data(as_text=True)
-        self.assertIn('首页',data)
-        self.assertIn('meiyujack',data)
 
 if __name__ == '__main__':
     unittest.main()

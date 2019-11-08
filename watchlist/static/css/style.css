@@ -128,3 +128,6 @@ input[name=year]{
 .delete{
   margin-bottom: 5px;
 }
+b{
+  font-size:18px;
+}

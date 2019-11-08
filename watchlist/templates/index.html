@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<p>{{movies|length}}</p>
+<p><b>{{movies|length}}</b>部电影</p>
 <ul class="movie-list">
   {% for movie in movies %}
   <li>{{movie.title}} - {{movie.year}}
