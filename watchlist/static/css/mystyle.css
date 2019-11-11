@@ -1,0 +1,33 @@
+body{
+  margin: auto;
+  text-align: center;
+  font-size: 14px;
+  font-family: Helvetica,Arial,sans-serif;
+}
+/*input[type=radio]{*/
+/*  border: 1px solid #ddd;*/
+/*}*/
+/*table{*/
+/*    border: 1px solid #004085;*/
+/*}*/
+table {
+    margin: auto;
+}
+tr{
+  height: 10px;
+}
+td{
+  float: left;
+}
+#tel{
+  margin-left: inherit;
+  padding-right: 180px;
+}
+#ok{
+  margin-right: inherit;
+  padding-left: 180px;
+}
+
+/*#btn{*/
+/*  float: right;*/
+/*}*/

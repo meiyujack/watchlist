@@ -1,0 +1,926 @@
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="{{ url_for('static',filename='js/jquery.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/myjs.js') }}"></script>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/mystyle.css')}}">
+</head>
+<body>
+<form action="">
+    <h1>症状自评量表SCL90</h1>
+    <table>
+        <tr>
+            <td>1.头痛</td>
+        </tr>
+            <tr>
+            <td><label><input type="radio" class="somatization" name="1" value="1">没有</label></td>
+            <td><label><input type="radio" class="somatization" name="1" value="2">很轻</label></td>
+            <td><label><input type="radio" class="somatization" name="1" value="3">中等</label></td>
+            <td><label><input type="radio" class="somatization" name="1" value="4">偏重</label></td>
+            <td><label><input type="radio" class="somatization" name="1" value="5">严重</label></td>
+            </tr>
+
+        <tr>
+            <td>2.神经过敏，心中不踏实</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="anxiety" name="2" value="1">没有</label></td>
+            <td><label><input type="radio" class="anxiety" name="2" value="2">很轻</label></td>
+            <td><label><input type="radio" class="anxiety" name="2" value="3">中等</label></td>
+            <td><label><input type="radio" class="anxiety" name="2" value="4">偏重</label></td>
+            <td><label><input type="radio" class="anxiety" name="2" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>3.头脑中有不必要的想法或字句盘旋</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="oc" name="3" value="1">没有</label></td>
+            <td><label><input type="radio" class="oc" name="3" value="2">很轻</label></td>
+            <td><label><input type="radio" class="oc" name="3" value="3">中等</label></td>
+            <td><label><input type="radio" class="oc" name="3" value="4">偏重</label></td>
+            <td><label><input type="radio" class="oc" name="3" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>4.头晕或晕倒</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="somatization" name="4" value="1">没有</label></td>
+            <td><label><input type="radio" class="somatization" name="4" value="2">很轻</label></td>
+            <td><label><input type="radio" class="somatization" name="4" value="3">中等</label></td>
+            <td><label><input type="radio" class="somatization" name="4" value="4">偏重</label></td>
+            <td><label><input type="radio" class="somatization" name="4" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>5.对异性的兴趣减退</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="depression" name="5" value="1">没有</label></td>
+            <td><label><input type="radio" class="depression" name="5" value="2">很轻</label></td>
+            <td><label><input type="radio" class="depression" name="5" value="3">中等</label></td>
+            <td><label><input type="radio" class="depression" name="5" value="4">偏重</label></td>
+            <td><label><input type="radio" class="depression" name="5" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>6.对旁人责备求全</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="sensitive" name="6" value="1">没有</label></td>
+            <td><label><input type="radio" class="sensitive" name="6" value="2">很轻</label></td>
+            <td><label><input type="radio" class="sensitive" name="6" value="3">中等</label></td>
+            <td><label><input type="radio" class="sensitive" name="6" value="4">偏重</label></td>
+            <td><label><input type="radio" class="sensitive" name="6" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>7.感到别人能控制你的思想</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="s" name="7" value="1">没有</label></td>
+            <td><label><input type="radio" class="s" name="7" value="2">很轻</label></td>
+            <td><label><input type="radio" class="s" name="7" value="3">中等</label></td>
+            <td><label><input type="radio" class="s" name="7" value="4">偏重</label></td>
+            <td><label><input type="radio" class="s" name="7" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>8.责怪别人制造麻烦</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="paranoid" name="8" value="1">没有</label></td>
+            <td><label><input type="radio" class="paranoid" name="8" value="2">很轻</label></td>
+            <td><label><input type="radio" class="paranoid" name="8" value="3">中等</label></td>
+            <td><label><input type="radio" class="paranoid" name="8" value="4">偏重</label></td>
+            <td><label><input type="radio" class="paranoid" name="8" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>9.忘性大</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="oc" name="9" value="1">没有</label></td>
+            <td><label><input type="radio" class="oc" name="9" value="2">很轻</label></td>
+            <td><label><input type="radio" class="oc" name="9" value="3">中等</label></td>
+            <td><label><input type="radio" class="oc" name="9" value="4">偏重</label></td>
+            <td><label><input type="radio" class="oc" name="9" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>10.担心自己的衣饰整齐及仪态的端正</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="oc" name="10" value="1">没有</label></td>
+            <td><label><input type="radio" class="oc" name="10" value="2">很轻</label></td>
+            <td><label><input type="radio" class="oc" name="10" value="3">中等</label></td>
+            <td><label><input type="radio" class="oc" name="10" value="4">偏重</label></td>
+            <td><label><input type="radio" class="oc" name="10" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>11.容易烦恼和激动</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="hostile" name="11" value="1">没有</label></td>
+            <td><label><input type="radio" class="hostile" name="11" value="2">很轻</label></td>
+            <td><label><input type="radio" class="hostile" name="11" value="3">中等</label></td>
+            <td><label><input type="radio" class="hostile" name="11" value="4">偏重</label></td>
+            <td><label><input type="radio" class="hostile" name="11" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>12.胸痛</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="somatization" name="12" value="1">没有</label></td>
+            <td><label><input type="radio" class="somatization" name="12" value="2">很轻</label></td>
+            <td><label><input type="radio" class="somatization" name="12" value="3">中等</label></td>
+            <td><label><input type="radio" class="somatization" name="12" value="4">偏重</label></td>
+            <td><label><input type="radio" class="somatization" name="12" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>13.害怕空旷的场所或街道</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="terrified" name="13" value="1">没有</label></td>
+            <td><label><input type="radio" class="terrified" name="13" value="2">很轻</label></td>
+            <td><label><input type="radio" class="terrified" name="13" value="3">中等</label></td>
+            <td><label><input type="radio" class="terrified" name="13" value="4">偏重</label></td>
+            <td><label><input type="radio" class="terrified" name="13" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>14.感到自己的精力下降，活动减慢</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="depression" name="14" value="1">没有</label></td>
+            <td><label><input type="radio" class="depression" name="14" value="2">很轻</label></td>
+            <td><label><input type="radio" class="depression" name="14" value="3">中等</label></td>
+            <td><label><input type="radio" class="depression" name="14" value="4">偏重</label></td>
+            <td><label><input type="radio" class="depression" name="14" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>15.想结束自己的生命</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="depression" name="15" value="1">没有</label></td>
+            <td><label><input type="radio" class="depression" name="15" value="2">很轻</label></td>
+            <td><label><input type="radio" class="depression" name="15" value="3">中等</label></td>
+            <td><label><input type="radio" class="depression" name="15" value="4">偏重</label></td>
+            <td><label><input type="radio" class="depression" name="15" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>16.听到旁人听不到的声音</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="s" name="16" value="1">没有</label></td>
+            <td><label><input type="radio" class="s" name="16" value="2">很轻</label></td>
+            <td><label><input type="radio" class="s" name="16" value="3">中等</label></td>
+            <td><label><input type="radio" class="s" name="16" value="4">偏重</label></td>
+            <td><label><input type="radio" class="s" name="16" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>17.发抖</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="anxiety" name="17" value="1">没有</label></td>
+            <td><label><input type="radio" class="anxiety" name="17" value="2">很轻</label></td>
+            <td><label><input type="radio" class="anxiety" name="17" value="3">中等</label></td>
+            <td><label><input type="radio" class="anxiety" name="17" value="4">偏重</label></td>
+            <td><label><input type="radio" class="anxiety" name="17" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>18.感到大多数人都不可信任</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="paranoid" name="18" value="1">没有</label></td>
+            <td><label><input type="radio" class="paranoid" name="18" value="2">很轻</label></td>
+            <td><label><input type="radio" class="paranoid" name="18" value="3">中等</label></td>
+            <td><label><input type="radio" class="paranoid" name="18" value="4">偏重</label></td>
+            <td><label><input type="radio" class="paranoid" name="18" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>19.胃口不好</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="others" name="19" value="1">没有</label></td>
+            <td><label><input type="radio" class="others" name="19" value="2">很轻</label></td>
+            <td><label><input type="radio" class="others" name="19" value="3">中等</label></td>
+            <td><label><input type="radio" class="others" name="19" value="4">偏重</label></td>
+            <td><label><input type="radio" class="others" name="19" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>20.容易哭泣</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="depression" name="20" value="1">没有</label></td>
+            <td><label><input type="radio" class="depression" name="20" value="2">很轻</label></td>
+            <td><label><input type="radio" class="depression" name="20" value="3">中等</label></td>
+            <td><label><input type="radio" class="depression" name="20" value="4">偏重</label></td>
+            <td><label><input type="radio" class="depression" name="20" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>21.同异性相处时感到害羞不自在</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="sensitive" name="21" value="1">没有</label></td>
+            <td><label><input type="radio" class="sensitive" name="21" value="2">很轻</label></td>
+            <td><label><input type="radio" class="sensitive" name="21" value="3">中等</label></td>
+            <td><label><input type="radio" class="sensitive" name="21" value="4">偏重</label></td>
+            <td><label><input type="radio" class="sensitive" name="21" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>22.感到受骗，中了圈套或有人想抓住您</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="depression" name="22" value="1">没有</label></td>
+            <td><label><input type="radio" class="depression" name="22" value="2">很轻</label></td>
+            <td><label><input type="radio" class="depression" name="22" value="3">中等</label></td>
+            <td><label><input type="radio" class="depression" name="22" value="4">偏重</label></td>
+            <td><label><input type="radio" class="depression" name="22" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>23.无缘无故地突然感到害怕</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="anxiety" name="23" value="1">没有</label></td>
+            <td><label><input type="radio" class="anxiety" name="23" value="2">很轻</label></td>
+            <td><label><input type="radio" class="anxiety" name="23" value="3">中等</label></td>
+            <td><label><input type="radio" class="anxiety" name="23" value="4">偏重</label></td>
+            <td><label><input type="radio" class="anxiety" name="23" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>24.自己不能控制地大发脾气</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="hostile" name="24" value="1">没有</label></td>
+            <td><label><input type="radio" class="hostile" name="24" value="2">很轻</label></td>
+            <td><label><input type="radio" class="hostile" name="24" value="3">中等</label></td>
+            <td><label><input type="radio" class="hostile" name="24" value="4">偏重</label></td>
+            <td><label><input type="radio" class="hostile" name="24" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>25.怕单独出门</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="terrified" name="25" value="1">没有</label></td>
+            <td><label><input type="radio" class="terrified" name="25" value="2">很轻</label></td>
+            <td><label><input type="radio" class="terrified" name="25" value="3">中等</label></td>
+            <td><label><input type="radio" class="terrified" name="25" value="4">偏重</label></td>
+            <td><label><input type="radio" class="terrified" name="25" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>26.经常责怪自己</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="depression" name="26" value="1">没有</label></td>
+            <td><label><input type="radio" class="depression" name="26" value="2">很轻</label></td>
+            <td><label><input type="radio" class="depression" name="26" value="3">中等</label></td>
+            <td><label><input type="radio" class="depression" name="26" value="4">偏重</label></td>
+            <td><label><input type="radio" class="depression" name="26" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>27.腰痛</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="somatization" name="27" value="1">没有</label></td>
+            <td><label><input type="radio" class="somatization" name="27" value="2">很轻</label></td>
+            <td><label><input type="radio" class="somatization" name="27" value="3">中等</label></td>
+            <td><label><input type="radio" class="somatization" name="27" value="4">偏重</label></td>
+            <td><label><input type="radio" class="somatization" name="27" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>28.感到难以完成任务</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="oc" name="28" value="1">没有</label></td>
+            <td><label><input type="radio" class="oc" name="28" value="2">很轻</label></td>
+            <td><label><input type="radio" class="oc" name="28" value="3">中等</label></td>
+            <td><label><input type="radio" class="oc" name="28" value="4">偏重</label></td>
+            <td><label><input type="radio" class="oc" name="28" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>29.感到孤独</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="depression" name="29" value="1">没有</label></td>
+            <td><label><input type="radio" class="depression" name="29" value="2">很轻</label></td>
+            <td><label><input type="radio" class="depression" name="29" value="3">中等</label></td>
+            <td><label><input type="radio" class="depression" name="29" value="4">偏重</label></td>
+            <td><label><input type="radio" class="depression" name="29" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>30.感到苦闷</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="depression" name="30" value="1">没有</label></td>
+            <td><label><input type="radio" class="depression" name="30" value="2">很轻</label></td>
+            <td><label><input type="radio" class="depression" name="30" value="3">中等</label></td>
+            <td><label><input type="radio" class="depression" name="30" value="4">偏重</label></td>
+            <td><label><input type="radio" class="depression" name="30" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>31.过分担忧</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="depression" name="31" value="1">没有</label></td>
+            <td><label><input type="radio" class="depression" name="31" value="2">很轻</label></td>
+            <td><label><input type="radio" class="depression" name="31" value="3">中等</label></td>
+            <td><label><input type="radio" class="depression" name="31" value="4">偏重</label></td>
+            <td><label><input type="radio" class="depression" name="31" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>32.对事物不感兴趣</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="depression" name="32" value="1">没有</label></td>
+            <td><label><input type="radio" class="depression" name="32" value="2">很轻</label></td>
+            <td><label><input type="radio" class="depression" name="32" value="3">中等</label></td>
+            <td><label><input type="radio" class="depression" name="32" value="4">偏重</label></td>
+            <td><label><input type="radio" class="depression" name="32" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>33.感到害怕</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="anxiety" name="33" value="1">没有</label></td>
+            <td><label><input type="radio" class="anxiety" name="33" value="2">很轻</label></td>
+            <td><label><input type="radio" class="anxiety" name="33" value="3">中等</label></td>
+            <td><label><input type="radio" class="anxiety" name="33" value="4">偏重</label></td>
+            <td><label><input type="radio" class="anxiety" name="33" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>34.您的感情容易受到伤害</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="sensitive" name="34" value="1">没有</label></td>
+            <td><label><input type="radio" class="sensitive" name="34" value="2">很轻</label></td>
+            <td><label><input type="radio" class="sensitive" name="34" value="3">中等</label></td>
+            <td><label><input type="radio" class="sensitive" name="34" value="4">偏重</label></td>
+            <td><label><input type="radio" class="sensitive" name="34" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>35.旁人能知道您的私下想法</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="s" name="35" value="1">没有</label></td>
+            <td><label><input type="radio" class="s" name="35" value="2">很轻</label></td>
+            <td><label><input type="radio" class="s" name="35" value="3">中等</label></td>
+            <td><label><input type="radio" class="s" name="35" value="4">偏重</label></td>
+            <td><label><input type="radio" class="s" name="35" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>36.感到别人不理解您、不同情您</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="sensitive" name="36" value="1">没有</label></td>
+            <td><label><input type="radio" class="sensitive" name="36" value="2">很轻</label></td>
+            <td><label><input type="radio" class="sensitive" name="36" value="3">中等</label></td>
+            <td><label><input type="radio" class="sensitive" name="36" value="4">偏重</label></td>
+            <td><label><input type="radio" class="sensitive" name="36" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>37.感到人们对您不友好，不喜欢您</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="sensitive" name="37" value="1">没有</label></td>
+            <td><label><input type="radio" class="sensitive" name="37" value="2">很轻</label></td>
+            <td><label><input type="radio" class="sensitive" name="37" value="3">中等</label></td>
+            <td><label><input type="radio" class="sensitive" name="37" value="4">偏重</label></td>
+            <td><label><input type="radio" class="sensitive" name="37" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>38.做事必须做得很慢以保证做得正确</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="oc" name="38" value="1">没有</label></td>
+            <td><label><input type="radio" class="oc" name="38" value="2">很轻</label></td>
+            <td><label><input type="radio" class="oc" name="38" value="3">中等</label></td>
+            <td><label><input type="radio" class="oc" name="38" value="4">偏重</label></td>
+            <td><label><input type="radio" class="oc" name="38" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>39.心跳得很厉害</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="anxiety" name="39" value="1">没有</label></td>
+            <td><label><input type="radio" class="anxiety" name="39" value="2">很轻</label></td>
+            <td><label><input type="radio" class="anxiety" name="39" value="3">中等</label></td>
+            <td><label><input type="radio" class="anxiety" name="39" value="4">偏重</label></td>
+            <td><label><input type="radio" class="anxiety" name="39" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>40.恶心或胃部不舒服</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="somatization" name="40" value="1">没有</label></td>
+            <td><label><input type="radio" class="somatization" name="40" value="2">很轻</label></td>
+            <td><label><input type="radio" class="somatization" name="40" value="3">中等</label></td>
+            <td><label><input type="radio" class="somatization" name="40" value="4">偏重</label></td>
+            <td><label><input type="radio" class="somatization" name="40" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>41.感到比不上他人</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="sensitive" name="41" value="1">没有</label></td>
+            <td><label><input type="radio" class="sensitive" name="41" value="2">很轻</label></td>
+            <td><label><input type="radio" class="sensitive" name="41" value="3">中等</label></td>
+            <td><label><input type="radio" class="sensitive" name="41" value="4">偏重</label></td>
+            <td><label><input type="radio" class="sensitive" name="41" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>42.肌肉酸痛</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="somatization" name="42" value="1">没有</label></td>
+            <td><label><input type="radio" class="somatization" name="42" value="2">很轻</label></td>
+            <td><label><input type="radio" class="somatization" name="42" value="3">中等</label></td>
+            <td><label><input type="radio" class="somatization" name="42" value="4">偏重</label></td>
+            <td><label><input type="radio" class="somatization" name="42" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>43.感到有人在监视您、谈论您</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="paranoid" name="43" value="1">没有</label></td>
+            <td><label><input type="radio" class="paranoid" name="43" value="2">很轻</label></td>
+            <td><label><input type="radio" class="paranoid" name="43" value="3">中等</label></td>
+            <td><label><input type="radio" class="paranoid" name="43" value="4">偏重</label></td>
+            <td><label><input type="radio" class="paranoid" name="43" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>44.难以入睡</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="others" name="44" value="1">没有</label></td>
+            <td><label><input type="radio" class="others" name="44" value="2">很轻</label></td>
+            <td><label><input type="radio" class="others" name="44" value="3">中等</label></td>
+            <td><label><input type="radio" class="others" name="44" value="4">偏重</label></td>
+            <td><label><input type="radio" class="others" name="44" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>45.做事必须反复检查</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="oc" name="45" value="1">没有</label></td>
+            <td><label><input type="radio" class="oc" name="45" value="2">很轻</label></td>
+            <td><label><input type="radio" class="oc" name="45" value="3">中等</label></td>
+            <td><label><input type="radio" class="oc" name="45" value="4">偏重</label></td>
+            <td><label><input type="radio" class="oc" name="45" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>46.难以做出决定</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="oc" name="46" value="1">没有</label></td>
+            <td><label><input type="radio" class="oc" name="46" value="2">很轻</label></td>
+            <td><label><input type="radio" class="oc" name="46" value="3">中等</label></td>
+            <td><label><input type="radio" class="oc" name="46" value="4">偏重</label></td>
+            <td><label><input type="radio" class="oc" name="46" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>47.怕乘电车、公共汽车、地铁或火车</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="terrified" name="47" value="1">没有</label></td>
+            <td><label><input type="radio" class="terrified" name="47" value="2">很轻</label></td>
+            <td><label><input type="radio" class="terrified" name="47" value="3">中等</label></td>
+            <td><label><input type="radio" class="terrified" name="47" value="4">偏重</label></td>
+            <td><label><input type="radio" class="terrified" name="47" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>48.呼吸有困难</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="somatization" name="48" value="1">没有</label></td>
+            <td><label><input type="radio" class="somatization" name="48" value="2">很轻</label></td>
+            <td><label><input type="radio" class="somatization" name="48" value="3">中等</label></td>
+            <td><label><input type="radio" class="somatization" name="48" value="4">偏重</label></td>
+            <td><label><input type="radio" class="somatization" name="48" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>49.一阵阵发冷或发热</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="somatization" name="49" value="1">没有</label></td>
+            <td><label><input type="radio" class="somatization" name="49" value="2">很轻</label></td>
+            <td><label><input type="radio" class="somatization" name="49" value="3">中等</label></td>
+            <td><label><input type="radio" class="somatization" name="49" value="4">偏重</label></td>
+            <td><label><input type="radio" class="somatization" name="49" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>50.因为感到害怕而避开某些东西、场合或活动</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="terrified" name="50" value="1">没有</label></td>
+            <td><label><input type="radio" class="terrified" name="50" value="2">很轻</label></td>
+            <td><label><input type="radio" class="terrified" name="50" value="3">中等</label></td>
+            <td><label><input type="radio" class="terrified" name="50" value="4">偏重</label></td>
+            <td><label><input type="radio" class="terrified" name="50" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>51.脑子变空了</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="oc" name="51" value="1">没有</label></td>
+            <td><label><input type="radio" class="oc" name="51" value="2">很轻</label></td>
+            <td><label><input type="radio" class="oc" name="51" value="3">中等</label></td>
+            <td><label><input type="radio" class="oc" name="51" value="4">偏重</label></td>
+            <td><label><input type="radio" class="oc" name="51" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>52.身体发麻或刺痛</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="somatization" name="52" value="1">没有</label></td>
+            <td><label><input type="radio" class="somatization" name="52" value="2">很轻</label></td>
+            <td><label><input type="radio" class="somatization" name="52" value="3">中等</label></td>
+            <td><label><input type="radio" class="somatization" name="52" value="4">偏重</label></td>
+            <td><label><input type="radio" class="somatization" name="52" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>53.喉咙有梗塞感</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="somatization" name="53" value="1">没有</label></td>
+            <td><label><input type="radio" class="somatization" name="53" value="2">很轻</label></td>
+            <td><label><input type="radio" class="somatization" name="53" value="3">中等</label></td>
+            <td><label><input type="radio" class="somatization" name="53" value="4">偏重</label></td>
+            <td><label><input type="radio" class="somatization" name="53" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>54.感到前途没有希望</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="depression" name="54" value="1">没有</label></td>
+            <td><label><input type="radio" class="depression" name="54" value="2">很轻</label></td>
+            <td><label><input type="radio" class="depression" name="54" value="3">中等</label></td>
+            <td><label><input type="radio" class="depression" name="54" value="4">偏重</label></td>
+            <td><label><input type="radio" class="depression" name="54" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>55.不能集中注意力</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="oc" name="55" value="1">没有</label></td>
+            <td><label><input type="radio" class="oc" name="55" value="2">很轻</label></td>
+            <td><label><input type="radio" class="oc" name="55" value="3">中等</label></td>
+            <td><label><input type="radio" class="oc" name="55" value="4">偏重</label></td>
+            <td><label><input type="radio" class="oc" name="55" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>56.感到身体的某一部分软弱无力</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="somatization" name="56" value="1">没有</label></td>
+            <td><label><input type="radio" class="somatization" name="56" value="2">很轻</label></td>
+            <td><label><input type="radio" class="somatization" name="56" value="3">中等</label></td>
+            <td><label><input type="radio" class="somatization" name="56" value="4">偏重</label></td>
+            <td><label><input type="radio" class="somatization" name="56" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>57.感到紧张或容易紧张</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="anxiety" name="57" value="1">没有</label></td>
+            <td><label><input type="radio" class="anxiety" name="57" value="2">很轻</label></td>
+            <td><label><input type="radio" class="anxiety" name="57" value="3">中等</label></td>
+            <td><label><input type="radio" class="anxiety" name="57" value="4">偏重</label></td>
+            <td><label><input type="radio" class="anxiety" name="57" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>58.感到手或脚发重</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="somatization" name="58" value="1">没有</label></td>
+            <td><label><input type="radio" class="somatization" name="58" value="2">很轻</label></td>
+            <td><label><input type="radio" class="somatization" name="58" value="3">中等</label></td>
+            <td><label><input type="radio" class="somatization" name="58" value="4">偏重</label></td>
+            <td><label><input type="radio" class="somatization" name="58" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>59.想到死亡的事</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="others" name="59" value="1">没有</label></td>
+            <td><label><input type="radio" class="others" name="59" value="2">很轻</label></td>
+            <td><label><input type="radio" class="others" name="59" value="3">中等</label></td>
+            <td><label><input type="radio" class="others" name="59" value="4">偏重</label></td>
+            <td><label><input type="radio" class="others" name="59" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>60.吃得太多</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="others" name="60" value="1">没有</label></td>
+            <td><label><input type="radio" class="others" name="60" value="2">很轻</label></td>
+            <td><label><input type="radio" class="others" name="60" value="3">中等</label></td>
+            <td><label><input type="radio" class="others" name="60" value="4">偏重</label></td>
+            <td><label><input type="radio" class="others" name="60" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>61.当别人看着您或谈论您时感到不自在</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="sensitive" name="61" value="1">没有</label></td>
+            <td><label><input type="radio" class="sensitive" name="61" value="2">很轻</label></td>
+            <td><label><input type="radio" class="sensitive" name="61" value="3">中等</label></td>
+            <td><label><input type="radio" class="sensitive" name="61" value="4">偏重</label></td>
+            <td><label><input type="radio" class="sensitive" name="61" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>62.有一些不属于您自己的想法</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="s" name="62" value="1">没有</label></td>
+            <td><label><input type="radio" class="s" name="62" value="2">很轻</label></td>
+            <td><label><input type="radio" class="s" name="62" value="3">中等</label></td>
+            <td><label><input type="radio" class="s" name="62" value="4">偏重</label></td>
+            <td><label><input type="radio" class="s" name="62" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>63.有想打人或伤害他人的冲动</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="hostile" name="63" value="1">没有</label></td>
+            <td><label><input type="radio" class="hostile" name="63" value="2">很轻</label></td>
+            <td><label><input type="radio" class="hostile" name="63" value="3">中等</label></td>
+            <td><label><input type="radio" class="hostile" name="63" value="4">偏重</label></td>
+            <td><label><input type="radio" class="hostile" name="63" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>64.醒得太早</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="others" name="64" value="1">没有</label></td>
+            <td><label><input type="radio" class="others" name="64" value="2">很轻</label></td>
+            <td><label><input type="radio" class="others" name="64" value="3">中等</label></td>
+            <td><label><input type="radio" class="others" name="64" value="4">偏重</label></td>
+            <td><label><input type="radio" class="others" name="64" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>65.必须反复洗手、点数</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="oc" name="65" value="1">没有</label></td>
+            <td><label><input type="radio" class="oc" name="65" value="2">很轻</label></td>
+            <td><label><input type="radio" class="oc" name="65" value="3">中等</label></td>
+            <td><label><input type="radio" class="oc" name="65" value="4">偏重</label></td>
+            <td><label><input type="radio" class="oc" name="65" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>66.睡得不稳不深</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="others" name="66" value="1">没有</label></td>
+            <td><label><input type="radio" class="others" name="66" value="2">很轻</label></td>
+            <td><label><input type="radio" class="others" name="66" value="3">中等</label></td>
+            <td><label><input type="radio" class="others" name="66" value="4">偏重</label></td>
+            <td><label><input type="radio" class="others" name="66" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>67.有想摔坏或破坏东西的想法</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="hostile" name="67" value="1">没有</label></td>
+            <td><label><input type="radio" class="hostile" name="67" value="2">很轻</label></td>
+            <td><label><input type="radio" class="hostile" name="67" value="3">中等</label></td>
+            <td><label><input type="radio" class="hostile" name="67" value="4">偏重</label></td>
+            <td><label><input type="radio" class="hostile" name="67" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>68.有一些别人没有的想法</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="paranoid" name="68" value="1">没有</label></td>
+            <td><label><input type="radio" class="paranoid" name="68" value="2">很轻</label></td>
+            <td><label><input type="radio" class="paranoid" name="68" value="3">中等</label></td>
+            <td><label><input type="radio" class="paranoid" name="68" value="4">偏重</label></td>
+            <td><label><input type="radio" class="paranoid" name="68" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>69.感到对别人神经过敏</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="sensitive" name="69" value="1">没有</label></td>
+            <td><label><input type="radio" class="sensitive" name="69" value="2">很轻</label></td>
+            <td><label><input type="radio" class="sensitive" name="69" value="3">中等</label></td>
+            <td><label><input type="radio" class="sensitive" name="69" value="4">偏重</label></td>
+            <td><label><input type="radio" class="sensitive" name="69" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>70.在商店或电影院等人多的地方感到不自在</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="terrified" name="70" value="1">没有</label></td>
+            <td><label><input type="radio" class="terrified" name="70" value="2">很轻</label></td>
+            <td><label><input type="radio" class="terrified" name="70" value="3">中等</label></td>
+            <td><label><input type="radio" class="terrified" name="70" value="4">偏重</label></td>
+            <td><label><input type="radio" class="terrified" name="70" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>71.感到任何事情都很困难</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="depression" name="71" value="1">没有</label></td>
+            <td><label><input type="radio" class="depression" name="71" value="2">很轻</label></td>
+            <td><label><input type="radio" class="depression" name="71" value="3">中等</label></td>
+            <td><label><input type="radio" class="depression" name="71" value="4">偏重</label></td>
+            <td><label><input type="radio" class="depression" name="71" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>72.一阵阵恐惧或惊恐</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="anxiety" name="72" value="1">没有</label></td>
+            <td><label><input type="radio" class="anxiety" name="72" value="2">很轻</label></td>
+            <td><label><input type="radio" class="anxiety" name="72" value="3">中等</label></td>
+            <td><label><input type="radio" class="anxiety" name="72" value="4">偏重</label></td>
+            <td><label><input type="radio" class="anxiety" name="72" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>73.感到公共场合吃东西很不舒服</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="sensitive" name="73" value="1">没有</label></td>
+            <td><label><input type="radio" class="sensitive" name="73" value="2">很轻</label></td>
+            <td><label><input type="radio" class="sensitive" name="73" value="3">中等</label></td>
+            <td><label><input type="radio" class="sensitive" name="73" value="4">偏重</label></td>
+            <td><label><input type="radio" class="sensitive" name="73" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>74.经常与人争论</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="hostile" name="74" value="1">没有</label></td>
+            <td><label><input type="radio" class="hostile" name="74" value="2">很轻</label></td>
+            <td><label><input type="radio" class="hostile" name="74" value="3">中等</label></td>
+            <td><label><input type="radio" class="hostile" name="74" value="4">偏重</label></td>
+            <td><label><input type="radio" class="hostile" name="74" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>75.单独一人时神经很紧张</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="terrified" name="75" value="1">没有</label></td>
+            <td><label><input type="radio" class="terrified" name="75" value="2">很轻</label></td>
+            <td><label><input type="radio" class="terrified" name="75" value="3">中等</label></td>
+            <td><label><input type="radio" class="terrified" name="75" value="4">偏重</label></td>
+            <td><label><input type="radio" class="terrified" name="75" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>76.别人对您的成绩没有做出恰当的评价</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="paranoid" name="76" value="1">没有</label></td>
+            <td><label><input type="radio" class="paranoid" name="76" value="2">很轻</label></td>
+            <td><label><input type="radio" class="paranoid" name="76" value="3">中等</label></td>
+            <td><label><input type="radio" class="paranoid" name="76" value="4">偏重</label></td>
+            <td><label><input type="radio" class="paranoid" name="76" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>77.即使和别人在一起也感到孤单</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="s" name="77" value="1">没有</label></td>
+            <td><label><input type="radio" class="s" name="77" value="2">很轻</label></td>
+            <td><label><input type="radio" class="s" name="77" value="3">中等</label></td>
+            <td><label><input type="radio" class="s" name="77" value="4">偏重</label></td>
+            <td><label><input type="radio" class="s" name="77" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>78.感到坐立不安心神不定</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="anxiety" name="78" value="1">没有</label></td>
+            <td><label><input type="radio" class="anxiety" name="78" value="2">很轻</label></td>
+            <td><label><input type="radio" class="anxiety" name="78" value="3">中等</label></td>
+            <td><label><input type="radio" class="anxiety" name="78" value="4">偏重</label></td>
+            <td><label><input type="radio" class="anxiety" name="78" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>79.感到自己没有什么价值</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="depression" name="79" value="1">没有</label></td>
+            <td><label><input type="radio" class="depression" name="79" value="2">很轻</label></td>
+            <td><label><input type="radio" class="depression" name="79" value="3">中等</label></td>
+            <td><label><input type="radio" class="depression" name="79" value="4">偏重</label></td>
+            <td><label><input type="radio" class="depression" name="79" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>80.感到熟悉的东西变成陌生或不像是真的</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="anxiety" name="80" value="1">没有</label></td>
+            <td><label><input type="radio" class="anxiety" name="80" value="2">很轻</label></td>
+            <td><label><input type="radio" class="anxiety" name="80" value="3">中等</label></td>
+            <td><label><input type="radio" class="anxiety" name="80" value="4">偏重</label></td>
+            <td><label><input type="radio" class="anxiety" name="80" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>81.大叫或摔东西</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="hostile" name="81" value="1">没有</label></td>
+            <td><label><input type="radio" class="hostile" name="81" value="2">很轻</label></td>
+            <td><label><input type="radio" class="hostile" name="81" value="3">中等</label></td>
+            <td><label><input type="radio" class="hostile" name="81" value="4">偏重</label></td>
+            <td><label><input type="radio" class="hostile" name="81" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>82.害怕会在公共场合晕倒</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="terrified" name="82" value="1">没有</label></td>
+            <td><label><input type="radio" class="terrified" name="82" value="2">很轻</label></td>
+            <td><label><input type="radio" class="terrified" name="82" value="3">中等</label></td>
+            <td><label><input type="radio" class="terrified" name="82" value="4">偏重</label></td>
+            <td><label><input type="radio" class="terrified" name="82" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>83.感到别人想占您的便宜</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="paranoid" name="83" value="1">没有</label></td>
+            <td><label><input type="radio" class="paranoid" name="83" value="2">很轻</label></td>
+            <td><label><input type="radio" class="paranoid" name="83" value="3">中等</label></td>
+            <td><label><input type="radio" class="paranoid" name="83" value="4">偏重</label></td>
+            <td><label><input type="radio" class="paranoid" name="83" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>84.为一些有关性的想法而很苦恼</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="s" name="84" value="1">没有</label></td>
+            <td><label><input type="radio" class="s" name="84" value="2">很轻</label></td>
+            <td><label><input type="radio" class="s" name="84" value="3">中等</label></td>
+            <td><label><input type="radio" class="s" name="84" value="4">偏重</label></td>
+            <td><label><input type="radio" class="s" name="84" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>85.您认为应该因为自己的过错而受到惩罚</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="s" name="85" value="1">没有</label></td>
+            <td><label><input type="radio" class="s" name="85" value="2">很轻</label></td>
+            <td><label><input type="radio" class="s" name="85" value="3">中等</label></td>
+            <td><label><input type="radio" class="s" name="85" value="4">偏重</label></td>
+            <td><label><input type="radio" class="s" name="85" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>86.感到要很快把事情做完</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="anxiety" name="86" value="1">没有</label></td>
+            <td><label><input type="radio" class="anxiety" name="86" value="2">很轻</label></td>
+            <td><label><input type="radio" class="anxiety" name="86" value="3">中等</label></td>
+            <td><label><input type="radio" class="anxiety" name="86" value="4">偏重</label></td>
+            <td><label><input type="radio" class="anxiety" name="86" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>87.感到自己的身体有严重问题</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="s" name="87" value="1">没有</label></td>
+            <td><label><input type="radio" class="s" name="87" value="2">很轻</label></td>
+            <td><label><input type="radio" class="s" name="87" value="3">中等</label></td>
+            <td><label><input type="radio" class="s" name="87" value="4">偏重</label></td>
+            <td><label><input type="radio" class="s" name="87" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>88.从未感到和其他人很亲近</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="s" name="88" value="1">没有</label></td>
+            <td><label><input type="radio" class="s" name="88" value="2">很轻</label></td>
+            <td><label><input type="radio" class="s" name="88" value="3">中等</label></td>
+            <td><label><input type="radio" class="s" name="88" value="4">偏重</label></td>
+            <td><label><input type="radio" class="s" name="88" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>89.感到自己有罪</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="others" name="89" value="1">没有</label></td>
+            <td><label><input type="radio" class="others" name="89" value="2">很轻</label></td>
+            <td><label><input type="radio" class="others" name="89" value="3">中等</label></td>
+            <td><label><input type="radio" class="others" name="89" value="4">偏重</label></td>
+            <td><label><input type="radio" class="others" name="89" value="5">严重</label></td>
+        </tr>
+        <tr>
+            <td>90.感到自己的脑子有毛病</td>
+        </tr>
+        <tr>
+            <td><label><input type="radio" class="s" name="90" value="1">没有</label></td>
+            <td><label><input type="radio" class="s" name="90" value="2">很轻</label></td>
+            <td><label><input type="radio" class="s" name="90" value="3">中等</label></td>
+            <td><label><input type="radio" class="s" name="90" value="4">偏重</label></td>
+            <td><label><input type="radio" class="s" name="90" value="5">严重</label></td>
+        </tr>
+    </table>
+
+        <input type="tel" name="num" id="tel" placeholder="请输入您的电话号码">
+    <div>
+        <textarea name="result" id="result" cols="30" rows="11" readonly></textarea>
+    </div>
+    <br>
+    <div id="ok">
+        <input type="button" id="btn" value="确定">
+    </div>
+</form>
+</body>
+</html>

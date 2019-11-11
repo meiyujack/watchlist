@@ -108,3 +108,7 @@ def logout():
     logout_user()
     flash('拜拜~')
     return redirect(url_for('index'))
+
+@app.route('/s')
+def scl():
+    return render_template('SCL90.html')
